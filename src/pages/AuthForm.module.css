@@ -1,0 +1,57 @@
+.lede {
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.banner {
+  border: 1.5px solid var(--signal);
+  background: rgba(228, 71, 43, 0.08);
+  padding: 0.8rem 1rem;
+  font-size: 0.92rem;
+}
+
+.submit {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.switch {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: var(--rule);
+  font-size: 0.95rem;
+}
+
+.switch a {
+  font-weight: 600;
+  text-decoration-color: var(--signal);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.strength {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  margin-top: 0.2rem;
+}
+
+.strength span {
+  height: 5px;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+}
+
+.strength span.on {
+  background: var(--ink);
+}
+
+.strength[data-score='4'] span.on {
+  background: var(--mustard);
+}
