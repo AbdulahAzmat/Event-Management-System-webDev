@@ -1,0 +1,17 @@
+.header {
+  padding: clamp(2.5rem, 6vw, 4.5rem) 0 2rem;
+  border-bottom: var(--rule);
+}
+
+.title {
+  font-size: clamp(3rem, 9vw, 6.5rem);
+  letter-spacing: -0.045em;
+  margin-top: 0.6rem;
+}
+
+.body {
+  margin-top: 1.25rem;
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
