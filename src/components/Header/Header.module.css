@@ -1,0 +1,166 @@
+.header {
+  border-bottom: var(--rule);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.ticker {
+  background: var(--ink);
+  color: var(--paper);
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 0.35rem 0;
+}
+
+.tickerTrack {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+.tickerTrack > span {
+  display: inline-flex;
+  gap: 1.5rem;
+}
+
+.dot {
+  color: var(--mustard);
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tickerTrack {
+    animation: none;
+  }
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 68px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.9rem;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.logoDot {
+  color: var(--signal);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.navLink {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.navLink:hover {
+  border-bottom-color: var(--ink);
+}
+
+.active {
+  border-bottom-color: var(--signal);
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding-left: 1.75rem;
+  border-left: var(--rule);
+}
+
+.greeting {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-weight: 600;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  background: var(--mustard);
+  border: 1.5px solid var(--ink);
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.menuToggle {
+  display: none;
+  background: none;
+  border: 1.5px solid var(--ink);
+  padding: 0.45rem 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+@media (max-width: 760px) {
+  .menuToggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--paper);
+    border-bottom: var(--rule);
+    padding: 0.5rem var(--gutter) 1.25rem;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .navLink {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--paper-deep);
+    font-size: 0.9rem;
+  }
+
+  .account {
+    border-left: none;
+    padding: 1rem 0 0;
+    justify-content: space-between;
+  }
+}
