@@ -1,0 +1,47 @@
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1.75rem 0;
+}
+
+.chip,
+.chipActive {
+  border: 1.5px solid var(--ink);
+  padding: 0.45rem 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  background: transparent;
+}
+
+.chip:hover {
+  background: var(--paper-deep);
+}
+
+.chipActive {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.results {
+  margin-top: 2.5rem;
+  min-height: 300px;
+}
+
+.count {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid var(--ink);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
