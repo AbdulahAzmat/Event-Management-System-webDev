@@ -90,3 +90,26 @@ export async function searchEvents(filters, page = 0) {
     totalResults: data.page.totalElements,
   }
 }
+
+// Full details for one event, used by the event details page.
+export async function getEventById(id) {
+  const raw = await request(`/events/${id}.json`, {})
+  const venue = raw._embedded?.venues?.[0]
+
+  return {
+    ...simplifyEvent(raw),
+    info: raw.info ?? raw.description ?? null,
+    pleaseNote: raw.pleaseNote ?? null,
+    ticketLimit: raw.ticketLimit?.info ?? null,
+    seatMap: raw.seatmap?.staticUrl ?? null,
+    salesStart: raw.sales?.public?.startDateTime ?? null,
+    promoter: raw.promoter?.name ?? null,
+    address: [venue?.address?.line1, venue?.city?.name, venue?.state?.name, venue?.postalCode]
+      .filter(Boolean)
+      .join(', '),
+    latitude: venue?.location?.latitude ?? null,
+    longitude: venue?.location?.longitude ?? null,
+    // The artists or teams taking part.
+    lineup: (raw._embedded?.attractions ?? []).map((a) => ({ id: a.id, name: a.name, url: a.url })),
+  }
+}

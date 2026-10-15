@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { searchEvents } from '../api/ticketmaster'
+import { getEventById, searchEvents } from '../api/ticketmaster'
 
 export const EMPTY_FILTERS = {
   keyword: '',
@@ -22,6 +22,11 @@ export const fetchUpcoming = createAsyncThunk('events/fetchUpcoming', async () =
   return result.events.slice(0, 6)
 })
 
+// Loads one event for the details page.
+export const fetchEventById = createAsyncThunk('events/fetchEventById', async (id) => {
+  return getEventById(id)
+})
+
 const initialState = {
   list: [],
   page: 0,
@@ -33,6 +38,10 @@ const initialState = {
 
   upcoming: [],
   upcomingStatus: 'idle',
+
+  current: null, // the event open on the details page
+  currentStatus: 'idle',
+  currentError: null,
 }
 
 const eventsSlice = createSlice({
@@ -72,6 +81,19 @@ const eventsSlice = createSlice({
       })
       .addCase(fetchUpcoming.rejected, (state) => {
         state.upcomingStatus = 'failed'
+      })
+      .addCase(fetchEventById.pending, (state) => {
+        state.currentStatus = 'loading'
+        state.currentError = null
+        state.current = null
+      })
+      .addCase(fetchEventById.fulfilled, (state, action) => {
+        state.currentStatus = 'succeeded'
+        state.current = action.payload
+      })
+      .addCase(fetchEventById.rejected, (state, action) => {
+        state.currentStatus = 'failed'
+        state.currentError = action.error.message
       })
   },
 })

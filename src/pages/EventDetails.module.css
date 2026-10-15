@@ -1,0 +1,226 @@
+.loading {
+  padding: 6rem 0;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.top {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: var(--rule);
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 2rem;
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--signal);
+}
+
+.title {
+  font-size: clamp(2.6rem, 7vw, 5.5rem);
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  margin-top: 0.75rem;
+  max-width: 18ch;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 3rem;
+  align-items: start;
+  padding-top: 2.5rem;
+  padding-bottom: 5rem;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 1.5px solid var(--ink);
+}
+
+.section {
+  padding: 1.75rem 0;
+  border-bottom: var(--rule);
+}
+
+.section h2 {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.9rem;
+}
+
+.section p {
+  max-width: 65ch;
+}
+
+.venueName {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.lineup {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lineup li {
+  border: 1.5px solid var(--ink);
+  padding: 0.35rem 0.8rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.seatMap {
+  max-width: 420px;
+  border: 1px solid var(--ink);
+  background: #fff;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Ticket box */
+.ticket {
+  position: sticky;
+  top: 120px;
+  background: #fffdf8;
+  border: 1.5px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.ticketDate {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.day {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: var(--mustard);
+}
+
+.month {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+}
+
+.facts {
+  margin: 0;
+  padding: 0.5rem 1.5rem;
+}
+
+.facts div {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 0.75rem;
+  padding: 0.7rem 0;
+  border-bottom: 1px dashed var(--muted);
+}
+
+.facts div:last-child {
+  border-bottom: none;
+}
+
+.facts dt {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  padding-top: 0.15rem;
+}
+
+.facts dd {
+  margin: 0;
+}
+
+/* The tear-off part of the ticket with the button */
+.stub {
+  position: relative;
+  border-top: 2px dashed var(--ink);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.stub::before,
+.stub::after {
+  content: '';
+  position: absolute;
+  top: -11px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--paper);
+  border: 1.5px solid var(--ink);
+}
+
+.stub::before {
+  left: -11px;
+}
+
+.stub::after {
+  right: -11px;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.going {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: var(--signal);
+  margin-bottom: 0.9rem;
+}
+
+.notice {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 1.5px solid var(--signal);
+  color: var(--signal-dark);
+  padding: 0.7rem;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket {
+    position: static;
+    order: -1;
+  }
+}
