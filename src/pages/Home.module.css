@@ -96,6 +96,17 @@
   color: var(--mustard);
 }
 
+/* Coming up */
+.upcoming {
+  padding-top: clamp(3rem, 7vw, 5rem);
+}
+
+.upcomingList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* Category index */
 .index {
   padding-top: clamp(3rem, 7vw, 5rem);

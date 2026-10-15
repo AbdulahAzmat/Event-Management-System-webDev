@@ -1,19 +1,13 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { selectUser } from '../store/authSlice'
+import { fetchUpcoming } from '../store/eventsSlice'
+import { CATEGORIES } from '../utils/categories'
 import Button from '../components/Button/Button'
+import EventRow from '../components/EventRow/EventRow'
+import Loader from '../components/Loader/Loader'
 import styles from './Home.module.css'
-
-// Ticketmaster's top-level "segments". Day 2 swaps this for the live classifications feed.
-const CATEGORIES = [
-  { name: 'Music', note: 'Gigs, tours, club nights' },
-  { name: 'Sports', note: 'Matches, fights, race days' },
-  { name: 'Arts & Theatre', note: 'Plays, musicals, dance, comedy' },
-  { name: 'Family', note: 'Shows the kids will remember' },
-  { name: 'Film', note: 'Screenings and premieres' },
-  { name: 'Miscellaneous', note: 'Expos, tours and the odd one out' },
-]
 
 function thisWeek() {
   const today = new Date()
@@ -30,9 +24,17 @@ function thisWeek() {
 }
 
 export default function Home() {
+  const dispatch = useDispatch()
   const user = useSelector(selectUser)
+  const upcoming = useSelector((state) => state.events.upcoming)
+  const upcomingStatus = useSelector((state) => state.events.upcomingStatus)
   const [week] = useState(thisWeek)
   const [month] = useState(() => new Date().toLocaleDateString('en-GB', { month: 'long', year: 'numeric' }))
+
+  // Load the "coming up" list once.
+  useEffect(() => {
+    if (upcomingStatus === 'idle') dispatch(fetchUpcoming())
+  }, [dispatch, upcomingStatus])
 
   return (
     <>
@@ -75,6 +77,25 @@ export default function Home() {
           </ol>
         </div>
       </section>
+
+      {upcomingStatus !== 'failed' && (
+        <section className={`container ${styles.upcoming}`} aria-labelledby="upcoming-title">
+          <div className={styles.indexHead}>
+            <h2 id="upcoming-title">Coming up</h2>
+            <Link to="/events" className="mono">
+              See all events →
+            </Link>
+          </div>
+          {upcomingStatus === 'loading' && <Loader rows={3} />}
+          {upcomingStatus === 'succeeded' && (
+            <ul className={styles.upcomingList}>
+              {upcoming.map((event) => (
+                <EventRow key={event.id} event={event} />
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
 
       <section className={`container ${styles.index}`} aria-labelledby="index-title">
         <div className={styles.indexHead}>
