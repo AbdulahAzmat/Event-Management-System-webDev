@@ -1,0 +1,44 @@
+.tabs {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0 2.5rem;
+  border-bottom: var(--rule);
+}
+
+.tab,
+.activeTab {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  padding: 0.6rem 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.activeTab {
+  color: var(--ink);
+  border-bottom-color: var(--signal);
+}
+
+.tab span,
+.activeTab span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  vertical-align: middle;
+  border: 1px solid currentColor;
+  padding: 0.05rem 0.4rem;
+  margin-left: 0.3rem;
+}
+
+.list {
+  list-style: none;
+  margin: 0 0 5rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

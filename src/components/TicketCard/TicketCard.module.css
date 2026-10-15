@@ -1,0 +1,158 @@
+.ticket {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr) 170px;
+  background: #fffdf8;
+  border: 1.5px solid var(--ink);
+  box-shadow: 5px 5px 0 var(--ink);
+  position: relative;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--signal);
+  color: var(--paper);
+  border-right: 1.5px solid var(--ink);
+  padding: 1rem 0;
+}
+
+.day {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2.8rem;
+  line-height: 1;
+}
+
+.month {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+}
+
+.body {
+  padding: 1.1rem 1.4rem;
+  min-width: 0;
+}
+
+.category {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.45rem;
+  line-height: 1.15;
+  margin: 0.3rem 0;
+}
+
+.name a {
+  text-decoration: none;
+}
+
+.name a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--signal);
+}
+
+.place {
+  color: var(--muted);
+}
+
+.stub {
+  border-left: 2px dashed var(--ink);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 1rem;
+  position: relative;
+}
+
+.admit {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--signal);
+}
+
+.booked {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.cancel {
+  margin-top: 0.4rem;
+  background: none;
+  border: 1.5px solid var(--ink);
+  padding: 0.4rem 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.cancel:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.stamp {
+  margin-top: 0.4rem;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--signal-dark);
+  border: 2.5px solid var(--signal);
+  padding: 0.2rem 0.6rem;
+  transform: rotate(-8deg);
+}
+
+/* Past events look faded, like an old ticket */
+.attended {
+  box-shadow: 5px 5px 0 var(--muted);
+}
+
+.attended .date {
+  background: var(--muted);
+}
+
+.attended .body {
+  opacity: 0.75;
+}
+
+@media (max-width: 640px) {
+  .ticket {
+    grid-template-columns: 80px minmax(0, 1fr);
+  }
+
+  .day {
+    font-size: 2rem;
+  }
+
+  .stub {
+    grid-column: 1 / -1;
+    border-left: none;
+    border-top: 2px dashed var(--ink);
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .cancel,
+  .stamp {
+    margin-top: 0;
+  }
+}
