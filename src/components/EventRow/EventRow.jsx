@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { dateParts, formatPrice, formatTime } from '../../utils/format'
 import styles from './EventRow.module.css'
@@ -7,6 +8,7 @@ export default function EventRow({ event }) {
   const { day, month, weekday } = dateParts(event.date)
   const price = formatPrice(event)
   const cancelled = event.status === 'cancelled'
+  const [imageFailed, setImageFailed] = useState(false)
 
   return (
     <li>
@@ -20,7 +22,11 @@ export default function EventRow({ event }) {
         </div>
 
         <div className={styles.thumb}>
-          {event.image ? <img src={event.image} alt="" loading="lazy" /> : <span>No image</span>}
+          {event.image && !imageFailed ? (
+            <img src={event.image} alt="" loading="lazy" onError={() => setImageFailed(true)} />
+          ) : (
+            <span>No image</span>
+          )}
         </div>
 
         <div className={styles.info}>

@@ -11,8 +11,10 @@ import Pagination from '../components/Pagination/Pagination'
 import EmptyState from '../components/EmptyState/EmptyState'
 import Button from '../components/Button/Button'
 import styles from './Events.module.css'
+import usePageTitle from '../utils/usePageTitle'
 
 export default function Events() {
+  usePageTitle('Events')
   const dispatch = useDispatch()
   const { list, page, totalPages, totalResults, status, error, filters } = useSelector((state) => state.events)
 
@@ -89,7 +91,8 @@ export default function Events() {
                 </Button>
               }
             >
-              Try a different keyword, a wider date range or another city.
+              Try a different keyword, a wider date range or another city. Ticketmaster only lists events in the
+              countries it sells tickets in, such as the US, Canada, the UK, Ireland, Australia and much of Europe.
             </EmptyState>
           )}
 
