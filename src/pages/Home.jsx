@@ -8,6 +8,7 @@ import Button from '../components/Button/Button'
 import EventRow from '../components/EventRow/EventRow'
 import Loader from '../components/Loader/Loader'
 import styles from './Home.module.css'
+import usePageTitle from '../utils/usePageTitle'
 
 function thisWeek() {
   const today = new Date()
@@ -24,6 +25,7 @@ function thisWeek() {
 }
 
 export default function Home() {
+  usePageTitle(null)
   const dispatch = useDispatch()
   const user = useSelector(selectUser)
   const upcoming = useSelector((state) => state.events.upcoming)

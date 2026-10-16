@@ -7,8 +7,10 @@ import AuthShell from '../components/AuthShell/AuthShell'
 import TextField from '../components/TextField/TextField'
 import Button from '../components/Button/Button'
 import styles from './AuthForm.module.css'
+import usePageTitle from '../utils/usePageTitle'
 
 export default function Login() {
+  usePageTitle('Log in')
   const dispatch = useDispatch()
   const location = useLocation()
   const status = useSelector(selectAuthStatus)

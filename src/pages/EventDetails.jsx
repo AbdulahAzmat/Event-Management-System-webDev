@@ -8,6 +8,7 @@ import { dateParts, formatPrice, formatTime } from '../utils/format'
 import { isPast } from '../utils/dates'
 import Button from '../components/Button/Button'
 import EmptyState from '../components/EmptyState/EmptyState'
+import usePageTitle from '../utils/usePageTitle'
 import styles from './EventDetails.module.css'
 
 export default function EventDetails() {
@@ -20,6 +21,7 @@ export default function EventDetails() {
   const error = useSelector((state) => state.events.currentError)
   const user = useSelector((state) => state.auth.user)
   const myRegistrations = useSelector(selectMyRegistrations)
+  usePageTitle(event?.name ?? 'Event')
 
   useEffect(() => {
     dispatch(fetchEventById(id))

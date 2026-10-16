@@ -8,8 +8,10 @@ import EmptyState from '../components/EmptyState/EmptyState'
 import TicketCard from '../components/TicketCard/TicketCard'
 import Button from '../components/Button/Button'
 import styles from './MyEvents.module.css'
+import usePageTitle from '../utils/usePageTitle'
 
 export default function MyEvents() {
+  usePageTitle('My events')
   const dispatch = useDispatch()
   const user = useSelector((state) => state.auth.user)
   const registrations = useSelector(selectMyRegistrations)

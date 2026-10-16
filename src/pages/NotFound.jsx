@@ -1,7 +1,9 @@
 import EmptyState from '../components/EmptyState/EmptyState'
 import Button from '../components/Button/Button'
+import usePageTitle from '../utils/usePageTitle'
 
 export default function NotFound() {
+  usePageTitle('Page not found')
   return (
     <div className="container">
       <EmptyState

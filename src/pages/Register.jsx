@@ -7,10 +7,12 @@ import AuthShell from '../components/AuthShell/AuthShell'
 import TextField from '../components/TextField/TextField'
 import Button from '../components/Button/Button'
 import styles from './AuthForm.module.css'
+import usePageTitle from '../utils/usePageTitle'
 
 const EMPTY = { name: '', email: '', password: '', confirm: '' }
 
 export default function Register() {
+  usePageTitle('Create account')
   const dispatch = useDispatch()
   const status = useSelector(selectAuthStatus)
   const serverError = useSelector(selectAuthError)
