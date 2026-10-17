@@ -6,45 +6,6 @@
   z-index: 20;
 }
 
-.ticker {
-  background: var(--ink);
-  color: var(--paper);
-  overflow: hidden;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  padding: 0.35rem 0;
-}
-
-.tickerTrack {
-  display: flex;
-  gap: 1.5rem;
-  width: max-content;
-  animation: scroll 40s linear infinite;
-}
-
-.tickerTrack > span {
-  display: inline-flex;
-  gap: 1.5rem;
-}
-
-.dot {
-  color: var(--mustard);
-}
-
-@keyframes scroll {
-  to {
-    transform: translateX(-33.333%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .tickerTrack {
-    animation: none;
-  }
-}
-
 .bar {
   display: flex;
   align-items: center;

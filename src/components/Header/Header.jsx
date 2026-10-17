@@ -5,8 +5,6 @@ import { logout, selectUser } from '../../store/authSlice'
 import Button from '../Button/Button'
 import styles from './Header.module.css'
 
-const TICKER = ['Live music', 'Sports', 'Arts & theatre', 'Comedy', 'Family', 'Festivals']
-
 export default function Header() {
   const user = useSelector(selectUser)
   const dispatch = useDispatch()
@@ -25,16 +23,6 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <div className={styles.ticker} aria-hidden="true">
-        <div className={styles.tickerTrack}>
-          {[...TICKER, ...TICKER, ...TICKER].map((item, i) => (
-            <span key={i}>
-              {item} <span className={styles.dot}>✦</span>
-            </span>
-          ))}
-        </div>
-      </div>
-
       <div className={`container ${styles.bar}`}>
         <Link to="/" className={styles.logo} aria-label="Stub home">
           Stub<span className={styles.logoDot}>.</span>
