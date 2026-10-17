@@ -81,8 +81,7 @@
 .ticketLabel {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--signal);
 }
 
@@ -100,8 +99,7 @@
   gap: 1rem;
   font-family: var(--font-mono);
   font-size: 0.66rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--muted);
   border-top: 1px dashed var(--muted);
   padding-top: 0.5rem;

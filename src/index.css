@@ -10,7 +10,7 @@
 
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Public Sans', system-ui, sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-mono: 'Space Mono', ui-monospace, monospace;
 
   --max-width: 1180px;
   --gutter: clamp(16px, 4vw, 40px);
@@ -86,8 +86,7 @@ select {
 
 .mono {
   font-family: var(--font-mono);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
   font-size: 0.8rem;
 }
 

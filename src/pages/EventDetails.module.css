@@ -1,8 +1,7 @@
 .loading {
   padding: 6rem 0;
   font-family: var(--font-mono);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
   text-align: center;
 }
 
@@ -55,8 +54,7 @@
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.02em;
   margin-bottom: 0.9rem;
 }
 
@@ -98,8 +96,7 @@
   margin-top: 0.75rem;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
 }
 
 /* Ticket box */
@@ -154,8 +151,7 @@
 .facts dt {
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
   color: var(--muted);
   padding-top: 0.15rem;
 }
@@ -207,8 +203,7 @@
 .notice {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
   border: 1.5px solid var(--signal);
   color: var(--signal-dark);
   padding: 0.7rem;

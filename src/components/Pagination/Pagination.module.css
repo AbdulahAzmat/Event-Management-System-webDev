@@ -6,8 +6,7 @@
   margin: 2.5rem 0 4rem;
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
 }
 
 .pagination button {

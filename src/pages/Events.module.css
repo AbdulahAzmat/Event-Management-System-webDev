@@ -11,8 +11,7 @@
   padding: 0.45rem 0.9rem;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
   cursor: pointer;
   background: transparent;
 }
@@ -34,8 +33,7 @@
 .count {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
   padding-bottom: 0.75rem;
   border-bottom: 3px solid var(--ink);
 }

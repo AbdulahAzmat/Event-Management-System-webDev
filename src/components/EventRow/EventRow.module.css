@@ -52,7 +52,6 @@
   font-family: var(--font-mono);
   font-size: 0.65rem;
   color: var(--muted);
-  text-transform: uppercase;
 }
 
 .thumb img {
@@ -87,8 +86,7 @@
 .tag {
   font-family: var(--font-mono);
   font-size: 0.68rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
   background: var(--mustard);
   border: 1px solid var(--ink);
   padding: 0.15rem 0.5rem;
@@ -102,7 +100,6 @@
 .cancelled {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  text-transform: uppercase;
   color: var(--signal-dark);
   border: 1.5px solid var(--signal);
   padding: 0.1rem 0.4rem;

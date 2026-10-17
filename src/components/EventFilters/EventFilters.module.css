@@ -53,8 +53,7 @@
 .field span {
   font-family: var(--font-mono);
   font-size: 0.66rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
   color: var(--muted);
 }
 
@@ -79,8 +78,7 @@
   padding: 0 1.25rem;
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
   text-decoration: underline;
   text-underline-offset: 3px;
   cursor: pointer;
