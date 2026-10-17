@@ -14,9 +14,6 @@ export default function Footer() {
           <Link to="/my-events">My events</Link>
           <Link to="/register">Sign up</Link>
         </nav>
-        <p className={styles.credit}>
-          Event data from the Ticketmaster Discovery API · Built with React &amp; Redux Toolkit
-        </p>
       </div>
     </footer>
   )
